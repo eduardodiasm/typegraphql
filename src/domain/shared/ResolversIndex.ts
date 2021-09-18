@@ -1,3 +1,1 @@
-export default class ResolversIndex {
-
-}
+export default class ResolversIndex {}

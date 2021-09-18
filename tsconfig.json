@@ -22,7 +22,10 @@
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "baseUrl": ".",
-    "rootDir": "src"
+    "rootDir": "src",
+    "paths": {
+      "@domain/*": ["./src/domain/*"],
+    }
   },
   "exclude": ["node_modules"],
   "include": ["./src/**/*.tsx", "./src/**/*.ts"]

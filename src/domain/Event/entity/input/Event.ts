@@ -1,8 +1,11 @@
 import { MaxLength } from 'class-validator'
-import { Field } from 'type-graphql'
+import { Field, InputType } from 'type-graphql'
 
+import 'reflect-metadata'
+
+@InputType()
 export default class EventInput {
-  @Field()
+  @Field({ nullable: true })
   organizationId: string
 
   @Field()
@@ -16,6 +19,6 @@ export default class EventInput {
   @Field({ nullable: true })
   description?: string;
 
-  @Field(({ nullable: true }))
+  @Field(() => [String])
   businessUnitsIds: string[]
 }

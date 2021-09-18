@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec ts-node src/index.ts"
+    "dev": "nodemon --exec ts-node -r tsconfig-paths/register src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -25,15 +25,15 @@
     "eslint-plugin-promise": "^5.1.0",
     "nodemon": "^2.0.12",
     "ts-node": "^10.2.1",
+    "tsconfig-paths": "^3.11.0",
     "typescript": "^4.4.3"
   },
   "dependencies": {
     "apollo-server-express": "^3.3.0",
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
-    "pg": "^8.7.1",
+    "mongodb": "^4.1.2",
     "reflect-metadata": "^0.1.13",
-    "type-graphql": "^1.1.1",
-    "typeorm": "^0.2.37"
+    "type-graphql": "^1.1.1"
   }
 }

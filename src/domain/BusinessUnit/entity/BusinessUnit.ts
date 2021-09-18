@@ -1,22 +1,28 @@
-import { ObjectType, Field, ID } from 'type-graphql'
+import { ObjectType, Field } from 'type-graphql'
+import BusinessUnitInput from './input/BusinessUnit'
 
 @ObjectType()
 export default class BusinessUnit {
-  @Field(() => ID)
+  constructor (props: BusinessUnitInput) {
+    this.name = props.name
+    this.level = props.level
+    this.code = props.code
+    this.id = props.id
+    this.organizationId = props.organizationId
+  }
+
+  @Field()
   id: string;
 
-  @Field(() => ID)
+  @Field()
   organizationId: string
 
-  @Field(() => ID)
+  @Field()
   name: string
 
   @Field()
   level: number
 
-  @Field()
-  code: string
-
-  @Field()
-  children: string[]
+  @Field({ nullable: true })
+  code?: string
 }

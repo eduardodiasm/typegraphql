@@ -1,5 +1,6 @@
-import { ObjectType, Field, ID } from 'type-graphql'
+import { ObjectType, Field } from 'type-graphql'
 import EventInput from './input/Event'
+import BusinessUnit from '@domain/BusinessUnit/entity/BusinessUnit'
 
 @ObjectType()
 export default class EventEntity {
@@ -11,10 +12,10 @@ export default class EventEntity {
     this.businessUnitsIds = props.businessUnitsIds
   }
 
-  @Field(() => ID)
-  id: string;
+  @Field(({ nullable: true }))
+  id?: string;
 
-  @Field(() => ID)
+  @Field()
   organizationId: string
 
   @Field()
@@ -26,6 +27,9 @@ export default class EventEntity {
   @Field({ nullable: true })
   description?: string;
 
-  @Field(() => [ID])
+  @Field(() => [String])
   businessUnitsIds?: string[]
+
+  @Field(() => [BusinessUnit])
+  businessUnits?: BusinessUnit[]
 }

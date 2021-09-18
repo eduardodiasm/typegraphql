@@ -1,16 +1,13 @@
 import { ApolloServer } from 'apollo-server-express'
 import * as Express from 'express'
 import { buildSchema } from 'type-graphql'
-import { createConnection } from 'typeorm'
-import userResolvers from './domain/Event/resolver'
+import resolvers from './application/graphql/resolver'
 
 import 'reflect-metadata'
 
 const main = async () => {
-  await createConnection()
-
   const schema = await buildSchema({
-    resolvers: userResolvers
+    resolvers
   })
 
   const apolloServer = new ApolloServer({ schema })
