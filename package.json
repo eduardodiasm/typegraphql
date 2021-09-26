@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec ts-node -r tsconfig-paths/register src/index.ts"
+    "dev": "nodemon --exec ts-node -r tsconfig-paths/register src/index.ts",
+    "start": "ts-node -r tsconfig-paths/register dist/index.js",
+    "build": "tsc -p ."
   },
   "keywords": [],
   "author": "",
@@ -23,11 +25,10 @@
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
-    "nodemon": "^2.0.12",
-    "ts-node": "^10.2.1",
-    "tsconfig-paths": "^3.11.0"
+    "nodemon": "^2.0.12"
   },
   "dependencies": {
+    "tsconfig-paths": "^3.11.0",
     "apollo-server-express": "^3.3.0",
     "bcryptjs": "^2.4.3",
     "dotenv": "^10.0.0",
