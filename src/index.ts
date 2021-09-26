@@ -5,6 +5,8 @@ import resolvers from './application/graphql/resolver'
 
 import 'reflect-metadata'
 
+const port: string|number = process.env.PORT || 4000
+
 const main = async () => {
   const schema = await buildSchema({
     resolvers
@@ -16,7 +18,7 @@ const main = async () => {
   const app = Express()
   apolloServer.applyMiddleware({ app })
 
-  app.listen(4000, () => { console.log(':)') })
+  app.listen(port, () => { console.log(':)') })
 }
 
 main()
