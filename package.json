@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --exec ts-node -r tsconfig-paths/register src/index.ts",
     "start": "npm run build && ts-node -r tsconfig-paths/register dist/index.js",
-    "build": "tsc -p ."
+    "build": "npx --package=typescript -- tsc -p ."
   },
   "keywords": [],
   "author": "",
