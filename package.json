@@ -28,7 +28,7 @@
     "eslint-plugin-promise": "^5.1.0",
     "nodemon": "^2.0.12",
     "ts-node": "^10.2.1",
-    "tsconfig-paths": "^3.11.0",
+    "tsconfig-paths": "^3.11.0"
   },
   "dependencies": {
     "apollo-server-express": "^3.3.0",
