@@ -16,6 +16,7 @@ import BusinessUnitService from '@domain/BusinessUnit/service/BusinessUnit'
 
 export default class EventService {
   private repository: IEventRepository
+  private defaultOrganizationId: string = '61462a07fdf5950b0a6aa871'
 
   constructor (repository?: IEventRepository) {
     this.repository = repository || new EventRepository()
@@ -27,7 +28,7 @@ export default class EventService {
      * ideal seria setar por authHeader.organizationId
      */
 
-    eventProps.organizationId = '61462a07fdf5950b0a6aa871' ||
+    eventProps.organizationId = this.defaultOrganizationId ||
       this.repository.generateId()
 
     const event = new Event(eventProps)
