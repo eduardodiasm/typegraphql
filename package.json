@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --exec ts-node -r tsconfig-paths/register src/index.ts",
-    "start": "npm run build && ts-node -r tsconfig-paths/register dist/index.js",
-    "build": "npx --package=typescript -- tsc -p ."
+    "start": "ts-node -r tsconfig-paths/register dist/index.js",
+    "postinstall": "npx --package=typescript -- tsc -p ."
   },
   "keywords": [],
   "author": "",
