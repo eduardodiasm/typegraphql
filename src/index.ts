@@ -7,18 +7,20 @@ import 'reflect-metadata'
 
 const port: string|number = process.env.PORT || 4000
 
-const main = async () => {
-  const schema = await buildSchema({
-    resolvers
-  })
+class Server {
+  public static async execute () {
+    const schema = await buildSchema({
+      resolvers
+    })
 
-  const apolloServer = new ApolloServer({ schema })
-  await apolloServer.start()
+    const apolloServer = new ApolloServer({ schema })
+    await apolloServer.start()
 
-  const app = Express()
-  apolloServer.applyMiddleware({ app })
+    const app = Express()
+    apolloServer.applyMiddleware({ app })
 
-  app.listen(port, () => { console.log(':)') })
+    app.listen(port, () => { console.log(':)') })
+  }
 }
 
-main()
+Server.execute()
