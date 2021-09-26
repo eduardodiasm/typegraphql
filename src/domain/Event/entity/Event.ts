@@ -27,7 +27,7 @@ export default class EventEntity {
   @Field({ nullable: true })
   description?: string;
 
-  @Field(() => [String])
+  // @Field(() => [String])
   businessUnitsIds?: string[]
 
   @Field(() => [BusinessUnit])

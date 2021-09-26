@@ -31,6 +31,7 @@ export default class EventService {
       this.repository.generateId()
 
     const event = new Event(eventProps)
+
     return this.repository.save(event)
   }
 
