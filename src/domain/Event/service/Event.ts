@@ -23,11 +23,6 @@ export default class EventService {
   }
 
   public createEvent (eventProps: EventInput): Event {
-    /**
-     * Setando organizationId na mão,
-     * ideal seria setar por authHeader.organizationId
-     */
-
     eventProps.organizationId = this.defaultOrganizationId ||
       this.repository.generateId()
 
